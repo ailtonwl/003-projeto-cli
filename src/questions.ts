@@ -1,10 +1,10 @@
-import path from "node:path";
-import fs from "node:fs"
+import path from 'node:path';
+import fs from 'node:fs';
 
 // Enum
-import { EChoicesBoilerplate } from "enum/choices-boilerplate.enum";
-import { EErrors } from "enum/errors.enum";
-import { EGitName } from "enum/git-name.enum";
+import { EChoicesBoilerplate } from 'enum/choices-boilerplate.enum';
+import { EErrors } from 'enum/errors.enum';
+import { EGitName } from 'enum/git-name.enum';
 
 export const questions = [
   {
@@ -24,10 +24,7 @@ export const questions = [
 
       if (/[^\w\s-]/.test(folderName)) return EErrors.ERROR_SPECIAL_CHARACTERES;
 
-      if (
-        folderName === EGitName.NODEJS_TS || 
-        folderName === EGitName.SCSS
-      )
+      if (folderName === EGitName.NODEJS_TS || folderName === EGitName.SCSS)
         return EErrors.ERROR_GIT_NAME;
 
       try {
@@ -37,6 +34,6 @@ export const questions = [
       } catch (error) {}
 
       return true;
-    }
+    },
   },
 ];

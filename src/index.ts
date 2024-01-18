@@ -11,7 +11,7 @@ import { IAnswers } from 'interface/answers.interface';
 import { GenFile } from 'controller/generate.controller';
 
 class Init {
-  constructor(){
+  constructor() {
     inquirer.prompt(questions).then((answers: IAnswers) => {
       GenFile.gen(answers);
     });
